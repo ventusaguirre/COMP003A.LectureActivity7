@@ -29,6 +29,18 @@ namespace COMP003A.LectureActivity7
                 Console.WriteLine(names[i]); 
             }
 
+            Console.Write("\nEnter a number between 1 and 3: ");
+            string userInput = Console.ReadLine();
+
+            if (userInput == "2")
+            {
+                int.Parse(userInput);
+                Console.WriteLine("That is correct!");
+            }
+            else
+            {
+                Console.WriteLine("Invalid input.");
+            }
         }
     }
 }
