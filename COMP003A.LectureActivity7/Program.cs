@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Xml.Serialization;
 
 namespace COMP003A.LectureActivity7
 {
@@ -30,14 +31,20 @@ namespace COMP003A.LectureActivity7
             }
 
             Console.Write("\nEnter a number between 1 and 3: ");
-            string userInput = Console.ReadLine();
 
-            if (userInput == "2")
+            try
             {
-                int.Parse(userInput);
-                Console.WriteLine("That is correct!");
+                int choice = int.Parse(Console.ReadLine());
+                if (choice > 1 && choice < 3)
+                {
+                    Console.WriteLine($"{choice} is correct!");
+                }
+                else
+                {
+                    Console.WriteLine("Invalid number.");
+                }
             }
-            else
+            catch (FormatException)
             {
                 Console.WriteLine("Invalid input.");
             }
